@@ -10,12 +10,22 @@
 
 CssGitHubWindows is a user style which transforms GitHub's pages into GUI resembling Windows 9x. All modern browsers should be supported.
 
+NOTE: the style is a proof-of-concept / alpha. Only some parts of the website have been fully transformed.
+
 Screenshots
 ===========
 
 ![YaLinqo](Images/Screenshots/YaLinqo.png)
 
 ![CoreFX](Images/Screenshots/CoreFX.png)
+
+Features
+========
+
+* Almost pixel-perfect reproduction of buttons, tabs, separators, groups, edit boxes, list boxes, tooltips, windows.
+* Focus rectangles, text selection styles and other elements adjusted where possible.
+* Some icons changed into icons from Windows 9x.
+* Some UI has been transformed, for example repository stats are displayed as a shell list box and various group boxes have been titled.
 
 Install
 =======
@@ -51,6 +61,12 @@ Click on the extension title to see detailed instructions.
    * Visit [style page on UserStyles.org](https://userstyles.org/styles/162167/github-windows-edition-ath).
    * Click "Install with Stylish" button.
 </details>
+
+Known issues
+============
+
+* Due to requirement of elements to have multiple borders, size of some controls like buttons has been changed. If GitHub uses pixel sizes for buttons, they may be cut by a few pixels.
+* Due to tooltips being children of controls, they change full control size, so focus borders may be displayed incorrectly.
 
 License
 =======

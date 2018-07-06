@@ -27,6 +27,16 @@
     --color-link: rgb(0, 0, 255);
     --color-hover: rgb(223, 223, 255);
 
+    --font-family: MS Sans Serif, MS Reference Sans Serif, Liberation Sans, Tahoma, sans-serif;
+    --font-size: 12px;
+    --font-line: 1.2;
+    --font: var(--font-size)/var(--font-line) var(--font-family);
+    --font-size-text: 14px;
+    --font-line-text: 1.2;
+    --font-size-bigger: 13px;
+    --font-size-header: 14px;
+    --font-text: var(--font-size-text)/var(--font-line-text) var(--font-family);
+
     --button-3d-border-color-exact: var(--color-button-face) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-face);
     --button-3d-box-shadow-exact:
       0 -1px 0 0 var(--color-button-highlight),
@@ -64,7 +74,7 @@
       -1px 1px 0 0 var(--color-button-shadow-dark),
       1px 0 0 0 var(--color-button-shadow-dark),
       1px 1px 0 0 var(--color-button-shadow-dark);
-    
+
     --image-folder: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGFBMVEUAAAD//5nMzGYAAAD/zJmZmQD//8zx8fEIMK00AAAAAXRSTlMAQObYZgAAAE5JREFUCNdjQIDQ0GAwzVqWKGoAYgQpKSmFhoYyMISlgYCQAUOYIAg4QRgiIjARR4iICFzEESIiAgQghiMQuAAZQUpgYMDAbAwGBgwYAABoaBIom9Nm3gAAAABJRU5ErkJggg==');
     --image-folder-documents: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEUAAACZmQD//5n/zJn///8zMwDn59aGhobMzGZVVVUAM5mAgADx8fH/+/Dq6upNTU2p3qmcAAAAAXRSTlMAQObYZgAAAGlJREFUCNdjAIECBghgfwmmGAVLrn0AMSTaXY68BDNKXNYem72BgUE8LSsrLXMDgyAYpH1gEHEBAguxTAYRJSUlZWWxAAZGJWUlI+NGIAMkoGwIZAAFjIyADAZhZYgIVD+QwRoKAgxwAADcLBkG7Oto1QAAAABJRU5ErkJggg==');
     --image-file-text: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAD1BMVEUAAAD///8AAADAwMCAgIA71crUAAAAAXRSTlMAQObYZgAAADdJREFUCNdjYFAAAQYGBiYRIBACMhwVQUAByBAEAmEUhpCSkCK6iBLJIgiGszEIABlMSiDAwAAAbdoMvcC7PKEAAAAASUVORK5CYII=');
@@ -81,10 +91,10 @@
     --image-graph: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAAAAAACAAID///8A//+AgIDAwMAGyj3KAAAAAXRSTlMAQObYZgAAAFlJREFUCNdVy7ENwDAIRFGa9AGb9LCB5Qks3QoZII33HyHYFFFe9cUJ4nRS6Zt+cc1nhrg0KTmJW+usxO4u7Eriyz8sth1VbKxgDIPEF4CKoVSxxSUpHXd6AVDAE78kckOGAAAAAElFTkSuQmCC');
     --image-config: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAABmZgCZmZn/+/Dn59aZmQD//5kzMwAcHBzAwMDMzGZNTU0AAADq6upmZmYzAACtqZA/egufAAAAAXRSTlMAQObYZgAAAHJJREFUGNNNzVESgyAMRVEu8QVLBdz/aosU1DvDzyGThPgURtG22XfBZ9/3uJU3mMU18QC8oC/EjBvOlE5cBGleoegCGQvEBWhCcneycDcGkPAM2cUETG6eZceAgolmudElhForJOBooPCP1F//XLBw9APHJgNeldevuwAAAABJRU5ErkJggg==');
   }
-  
+
   body {
     background: var(--color-button-face) !important;
-    font: 12px/1.2 MS Sans Serif, MS Reference Sans Serif !important;
+    font: var(--font) !important;
   }
   a {
     color: var(--color-link);
@@ -97,9 +107,9 @@
     color: var(--color-highlight-text) !important;
     background: var(--color-highlight) !important;
   }
-  
+
   .markdown-body {
-    font: 14px/1.5 MS Sans Serif, MS Reference Sans Serif !important;
+    font: var(--font-text) !important;
   }
   .markdown-body pre,
   .markdown-body .highlight pre,
@@ -155,7 +165,7 @@
   .social-count:hover {
     text-decoration: underline !important;
   }
-  
+
   .topic-tag {
     color: inherit;
     background: var(--color-button-checked) !important;
@@ -255,7 +265,7 @@
     box-shadow: none !important;
     height: 18px !important;
   }
-  
+
   .repository-lang-stats-graph {
     border: solid 1px var(--color-button-shadow-dark) !important;
     border-radius: 0 !important;
@@ -275,12 +285,12 @@
   .table-list-header .btn-link {
     padding: 6px 8px !important;
   }
-  
+
   .issues-listing .h4 {
     font: inherit !important;
-    font-size: 13px !important;
+    font-size: var(--font-size-bigger) !important;
   }
-  
+
   .discussion-timeline,
   .timeline-comment-wrapper,
   .timeline-comment,
@@ -325,14 +335,14 @@
   .tabnav-tabs span:not(.Counter),
   .reponav-item,
   .select-menu-tab a {
-    font-size: 12px;
+    font-size: var(--font-size);
     font-weight: normal !important;
     color: var(--color-button-text) !important;
     background: var(--color-button-face) !important;
     border: solid 1px transparent !important;
     border-color: var(--button-3d-border-color) !important;
     border-bottom: none !important;
-    border-radius: 2px !important;
+    border-radius: 2px 2px 0 0 !important;
     box-shadow:
       1px 0 0 var(--color-button-shadow-dark),
       0 1px 0 var(--color-button-highlight)
@@ -368,7 +378,7 @@
   .Counter::after {
     content: ")";
   }
-  
+
   .select-menu-modal,
   .dropdown-menu {
     background: var(--color-button-face) !important;
@@ -546,8 +556,8 @@
   #user-links .notification-indicator .mail-status.unread::after {
     color: var(--color-button-text) !important;
     content: "(unread)";
-  }  
-  
+  }
+
   .Box:not(.position-absolute):not(.Popover-message),
   .blankslate,
   .border,
@@ -593,13 +603,13 @@
   }
   .Subhead {
     border: none !important;
-    font-size: 14px !important;
+    font-size: var(--font-size-header) !important;
   }
   .Subhead h2 {
-    font-size: 14px !important;
+    font-size: var(--font-size-header) !important;
     font-weight: bold !important;
   }
-  
+
   .octicon-file-directory, .octicon-file, .octicon-book, .octicon-history, .octicon-git-branch, .octicon-tag, .octicon-organization, .octicon-law, .octicon-code,
   .octicon-issue-opened, .octicon-git-pull-request, .octicon-project, .octicon-graph, .octicon-gear, .octicon-repo {
     fill: transparent !important;

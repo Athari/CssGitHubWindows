@@ -428,6 +428,7 @@
     display: contents !important;
   }
   .UnderlineNav-item,
+  .pagehead-tabs-item,
   .tabnav-tabs a,
   .tabnav-tabs span:not(.Counter),
   .reponav-item,
@@ -449,6 +450,7 @@
     min-height: 26px;
   }
   .UnderlineNav-item.selected,
+  .pagehead-tabs-item.selected,
   .tabnav-tabs a.selected,
   .tabnav-tabs span:not(.Counter).selected,
   .reponav-item.selected,

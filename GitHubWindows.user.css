@@ -2,7 +2,7 @@
 @name        GitHub Windows Edition [Ath]
 @namespace   https://github.com/Athari
 @version     0.5.0
-@description Transforms GitHub's pages into GUI resembling Windows 9x.
+@description Transforms GitHub's pages into a GUI resembling Windows 9x.
 @author      Athari
 @homepageURL https://github.com/Athari/CssGitHubWindows
 @license     MIT
@@ -24,18 +24,20 @@
     --color-highlight-text: rgb(255, 255, 255);
     --color-highlight: rgb(0, 0, 128);
     --color-gray-text: rgb(128, 128, 128);
+    --color-gray-text-dark: rgb(64, 64, 64);
     --color-link: rgb(0, 0, 255);
     --color-hover: rgb(223, 223, 255);
 
     --font-family: MS Sans Serif, MS Reference Sans Serif, Liberation Sans, Tahoma, sans-serif;
     --font-size: 12px;
-    --font-line: 1.2;
-    --font: var(--font-size)/var(--font-line) var(--font-family);
     --font-size-text: 14px;
-    --font-line-text: 1.2;
     --font-size-bigger: 13px;
     --font-size-header: 14px;
+    --font-line: 1.2;
+    --font-line-text: 1.2;
+    --font: var(--font-size)/var(--font-line) var(--font-family);
     --font-text: var(--font-size-text)/var(--font-line-text) var(--font-family);
+    --font-header: var(--font-size-header)/var(--font-line) var(--font-family);
 
     --button-3d-border-color-exact: var(--color-button-face) var(--color-button-shadow) var(--color-button-shadow) var(--color-button-face);
     --button-3d-box-shadow-exact:
@@ -95,6 +97,7 @@
   body {
     background: var(--color-button-face) !important;
     font: var(--font) !important;
+    color: var(--color-button-text) !important;
   }
   a {
     color: var(--color-link);
@@ -117,6 +120,23 @@
     background: #eee !important;
   }
 
+  .avatar,
+  .gravatar {
+    border-radius: 0 !important;
+  }
+
+  label {
+    font: inherit !important;
+    color: inherit !important;
+  }
+  .note,
+  .info,
+  .text-gray,
+  .text-gray-light {
+    font: inherit !important;
+    color: var(--color-gray-text-dark) !important;
+  }
+
   .Header {
     background: var(--color-active-caption) !important;
     font: inherit !important;
@@ -133,6 +153,15 @@
   }
   h1, h2, h3, h4, h5, h6 {
     border: none !important;
+  }
+
+  .footer .pt-6 {
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  .footer .pb-6 {
+    padding: 0 0 8px 0 !important;
   }
 
   .repohead {
@@ -207,14 +236,22 @@
 
   .file-wrap,
   .blob-wrapper,
+  .menu,
+  .network,
   #readme,
   .overall-summary,
+  .summary-stats,
+  .pulse-section .simple-conversation-list,
+  .capped-list,
   .issues-listing > div[class^=border] {
     background: var(--color-window) !important;
     border: solid 1px black !important;
     border-color: var(--box-3d-border-color) !important;
     border-radius: 0 !important;
     box-shadow: var(--box-3d-box-shadow) !important;
+  }
+  .network {
+    padding: 4px !important;
   }
   .file {
     border: none !important;
@@ -223,14 +260,47 @@
   .file-header {
     background: transparent !important;
   }
-  table.files td.message a,
-  table.files td.age span {
-    color: var(--color-window-text);
+  .menu-item {
+    font: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: inherit !important;
   }
-  table.files .navigation-focus td,
-  table.files tr:hover td,
-  .Box-row.navigation-focus {
+  .menu-item:hover {
     background: var(--color-hover) !important;
+  }
+  .menu-item.selected {
+    background: var(--color-highlight) !important;
+    color: var(--color-highlight-text) !important;
+  }
+  .menu-item::before {
+    display: none !important;
+  }
+  .network .current-repository,
+  .network .current-repository a {
+    background: var(--color-highlight) !important;
+    color: var(--color-highlight-text) !important;
+  }
+  .network .current-repository {
+    padding: 0px 4px 1px !important;
+  }
+  table.files td a,
+  table.files td span {
+    color: var(--color-window-text) !important;
+  }
+  table.files tr.navigation-focus td {
+    background: var(--color-highlight) !important;
+  }
+  table.files tr.navigation-focus td a,
+  table.files tr.navigation-focus td span {
+    color: var(--color-highlight-text) !important;
+  }
+  .Box-row.navigation-focus {
+    background: var(--color-highlight) !important;
+    color: var(--color-highlight-text) !important;
+  }
+  .Box-row.navigation-focus * {
+    color: inherit !important;
   }
   .Box-row {
     margin: 0 !important;
@@ -264,6 +334,12 @@
     border-radius: 0 !important;
     box-shadow: none !important;
     height: 18px !important;
+  }
+  .capped-list th {
+    background: var(--color-button-face) !important;
+  }
+  .capped-list tbody {
+    background: var(--color-window) !important;
   }
 
   .repository-lang-stats-graph {
@@ -308,6 +384,9 @@
     border-top: solid 1px var(--color-button-highlight) !important;
     box-shadow: 0 -1px 0 0 var(--color-button-shadow) !important;
   }
+  .discussion-sidebar-item {
+    color: inherit !important;
+  }
   .comment-reactions.has-reactions {
     border: none !important;
   }
@@ -316,9 +395,11 @@
     box-shadow: 0 1px 0 0 var(--color-button-highlight) !important;
   }
 
+  .UnderlineNav,
   .tabnav {
     margin: 0 !important;
     background: inherit !important;
+    border: none !important;
   }
   .select-menu-tabs {
     font-size: 0;
@@ -331,6 +412,7 @@
   .select-menu-tab {
     display: contents !important;
   }
+  .UnderlineNav-item,
   .tabnav-tabs a,
   .tabnav-tabs span:not(.Counter),
   .reponav-item,
@@ -351,6 +433,7 @@
     padding: 4px 6px !important;
     min-height: 26px;
   }
+  .UnderlineNav-item.selected,
   .tabnav-tabs a.selected,
   .tabnav-tabs span:not(.Counter).selected,
   .reponav-item.selected,
@@ -379,9 +462,11 @@
     content: ")";
   }
 
+  .auth-form-body,
   .select-menu-modal,
   .dropdown-menu {
     background: var(--color-button-face) !important;
+    color: inherit !important;
     border: solid 1px transparent !important;
     border-color: var(--button-3d-border-color) !important;
     border-radius: 0 !important;
@@ -412,11 +497,15 @@
   .select-menu-filters {
     background: inherit !important;
   }
-  .select-menu-item.navigation-focus,
-  .select-menu-item.navigation-focus.selected,
-  .select-menu-item.navigation-focus.select-menu-action,
-  .select-menu-item.navigation-focus .description-inline {
+  .select-menu-item.navigation-focus {
     background: var(--color-highlight) !important;
+    color: var(--color-highlight-text) !important;
+  }
+  .select-menu-item .text-gray {
+    color: var(--color-gray-text) !important;
+  }
+  .select-menu-item.navigation-focus .text-gray {
+    color: inherit !important;
   }
 
   .tooltipped::before {
@@ -443,7 +532,7 @@
   .pagination > :not(.gap),
   #user-links .dropdown,
   .js-menu-close {
-    font: inherit !important;
+    font: var(--font) !important;
     font-weight: normal !important;
     background: var(--color-button-face) !important;
     color: var(--color-button-text) !important;
@@ -485,7 +574,7 @@
   .btn.selected,
   [open] > .btn,
   .subnav-item:active,
-  .pagination > :active,
+  .pagination > :not(.gap):not(.disabled):active,
   #user-links .dropdown:active,
   .js-menu-close:active {
     border-color: var(--color-button-shadow) !important;
@@ -502,6 +591,8 @@
 
   input:not([type]),
   input[type=text],
+  input[type=search],
+  input[type=password],
   input[type=url],
   .tag-input,
   textarea {
@@ -515,6 +606,10 @@
     padding-top: 4px !important;
     padding-bottom: 4px !important;
     min-height: 0 !important;
+  }
+  input::placeholder {
+    color: var(--color-gray-text) !important;
+    opacity: 1 !important;
   }
 
   .btn-link {
@@ -558,7 +653,9 @@
     content: "(unread)";
   }
 
-  .Box:not(.position-absolute):not(.Popover-message),
+  .Box:not(.position-absolute):not(.Popover-message):not(.js-network-graph-container),
+  #user-repositories-list li,
+  .user-profile-nav + .position-relative > .d-block,
   .blankslate,
   .border,
   .timeline-comment,
@@ -575,6 +672,8 @@
     padding: 12px 8px 4px 8px;
     margin-top: 2px !important;
   }
+  #user-repositories-list li > .d-inline-block,
+  .user-profile-nav + .position-relative > .d-block > .d-inline-block,
   .js-notice > .border::before,
   .commit-tease::before {
     color: var(--color-button-text) !important;
@@ -590,7 +689,8 @@
   .commit-tease::before {
     content: "Last commit";
   }
-  .Box--danger {
+
+  .Box.Box.Box.Box.Box.Box.Box--danger {
     background: red !important;
   }
   .Box-row {
@@ -601,13 +701,185 @@
     border: none !important;
     box-shadow: none !important;
   }
+  .Box-header {
+    background: inherit !important;
+    border: none !important;
+    padding: 0 8px !important;
+  }
+  .Box h3 {
+    font: var(--font-header) !important;
+    border: none !important;
+  }
+
   .Subhead {
     border: none !important;
     font-size: var(--font-size-header) !important;
+    margin: 0 0 6px 0 !important;
   }
-  .Subhead h2 {
+  .Subhead h2,
+  .Subhead-heading {
     font-size: var(--font-size-header) !important;
     font-weight: bold !important;
+  }
+  .Subhead--spacious {
+    margin: 12px 0 0 0 !important;
+  }
+
+  .boxed-group > h3,
+  .boxed-group .heading {
+    background: none !important;
+  }
+
+  #user-repositories-list li,
+  .user-profile-nav + .position-relative > .d-block {
+    margin: 0 0 16px 0 !important;
+    padding: 12px 8px 8px 8px !important;
+  }
+  #user-repositories-list li > .d-inline-block,
+  .user-profile-nav + .position-relative > .d-block > .d-inline-block {
+    display: flex !important;
+    flex-flow: row !important;
+    margin: 2px 0 0 0;
+  }
+  #user-repositories-list li > .d-inline-block > span::before {
+    content: " (";
+  }
+  #user-repositories-list li > .d-inline-block > span::after {
+    content: ")";
+  }
+  #user-repositories-list li > .my-1,
+  #user-repositories-list li > .mt-2,
+  .user-profile-nav + .position-relative > .d-block > .mt-2 {
+    margin: 0 !important;
+  }
+  #user-repositories-list h3,
+  .user-profile-nav + .position-relative > .d-block h3 {
+    font: bold var(--font) !important;
+  }
+  #user-repositories-list h3 + span {
+    font: var(--font) !important;
+  }
+  #user-repositories-list h3 + span a {
+    color: var(--color-link) !important;
+  }
+  #user-repositories-list h3 + span a:hover {
+    text-decoration: underline !important;
+  }
+  #user-repositories-list .text-gray,
+  .user-profile-nav + .position-relative > .d-block .text-gray {
+    color: inherit !important;
+  }
+  .repo-language-color {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 0 !important;
+    margin: 2px 4px -2px 0 !important;
+  }
+
+  .summary-stats {
+    margin: -2px 0 4px 0 !important;
+  }
+  .summary-stats li {
+    border: none !important;
+    color: inherit !important;
+  }
+  .summary-stats li a {
+    background: inherit !important;
+    color: inherit !important;
+  }
+  .summary-stats li a:hover {
+    color: var(--color-link) !important;
+    text-decoration: underline !important;
+  }
+  .summary-stats li a .num {
+    font: bold var(--font) !important;
+    text-decoration-color: transparent !important;
+  }
+  .diffstat-summary {
+    font: inherit !important;
+    line-height: 166% !important;
+    color: inherit !important;
+    padding: 32px 48px 0 8px !important;
+  }
+  .pulse-section {
+    font: inherit !important;
+    color: inherit !important;
+  }
+  .pulse-section h3 {
+    color: inherit !important;
+  }
+  .pulse-section h3 span {
+    background: none !important;
+    font: var(--font-header) !important;
+  }
+  .pulse-section h3 .text-emphasized {
+    font-weight: bold !important;
+  }
+  .simple-conversation-list {
+    font: inherit !important;
+    color: inherit !important;
+  }
+  .simple-conversation-list > li {
+    border: none !important;
+    padding: 2px 0 !important;
+  }
+  .simple-conversation-list > li .num {
+    color: var(--color-gray-text) !important;
+  }
+  .pulse-section .simple-conversation-list {
+    padding: 4px 8px !important;
+  }
+
+  .Box.d-block svg {
+    margin: 0 0 -8px -8px;
+  }
+  .tint-box,
+  .capped-card-content {
+    background: transparent !important;
+  }
+  svg .tick text {
+    fill: var(--color-button-text) !important;
+  }
+  svg .tick line {
+    stroke: var(--color-gray-text) !important;
+  }
+
+  .js-edit-repo-container dl {
+    margin: 0 !important;
+  }
+  .boxed-group-inner,
+  .access-form-wrapper {
+    background: none !important;
+    color: inherit !important;
+    border: none !important;
+  }
+  .settings-next {
+    font: inherit !important;
+  }
+
+  .auth-form-header {
+    display: none !important;
+  }
+  .auth-form-body {
+    position: relative !important;
+    padding: 32px 8px 8px 8px !important;
+    font: inherit !important;
+  }
+  .auth-form-body::before {
+    display: block;
+    position: absolute;
+    height: 24px;
+    left: 0;
+    right: 0;
+    margin: -32px 0 0 0;
+    padding: 0 10px;
+    background: var(--color-active-caption) !important;
+    color: var(--color-active-caption-text) !important;
+    font: bold var(--font-size)/24px var(--font-family);
+    content: "Confirm password to continue";
+  }
+  .auth-form-body .btn {
+    margin: 8px 2px 0 2px !important;
   }
 
   .octicon-file-directory, .octicon-file, .octicon-book, .octicon-history, .octicon-git-branch, .octicon-tag, .octicon-organization, .octicon-law, .octicon-code,

@@ -8,7 +8,7 @@
 [![Install with Stylus](https://img.shields.io/badge/Install%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Athari/CssGitHubWindows/master/GitHubWindows.user.css)
 [![Install with Stylish](https://img.shields.io/badge/Install%20with-Stylish-00adad.svg)](https://userstyles.org/styles/162167/github-windows-edition-ath)
 
-CssGitHubWindows is a user style which transforms GitHub's pages into GUI resembling Windows 9x. All modern browsers should be supported.
+CssGitHubWindows is a user style which transforms GitHub's pages into a GUI resembling Windows 9x. All modern browsers should be supported.
 
 NOTE: the style is a proof-of-concept / alpha. Only some parts of the website have been fully transformed.
 

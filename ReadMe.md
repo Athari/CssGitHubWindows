@@ -5,19 +5,20 @@
 
 * [**GitHub repository**](https://github.com/Athari/CssGitHubWindows)
 
-[![Install with Stylus](https://img.shields.io/badge/Install%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Athari/CssGitHubWindows/master/GitHubWindows.user.css)
-[![Install with Stylish](https://img.shields.io/badge/Install%20with-Stylish-00adad.svg)](https://userstyles.org/styles/162167/github-windows-edition-ath)
+[![Install with Stylus](https://img.shields.io/badge/Install%20with-Stylus-00adad.svg)][Install with Stylus]
+[![Install with Stylish](https://img.shields.io/badge/Install%20with-Stylish-00adad.svg)][Install with Stylish]
+[![Install with TamperMonkey](https://img.shields.io/badge/Install%20with-TamperMonkey-00adad.svg)][Install with TamperMonkey]
 
 CssGitHubWindows is a user style which transforms GitHub's pages into a GUI resembling Windows 9x. All modern browsers should be supported.
 
-NOTE: the style is a proof-of-concept / alpha. Only some parts of the website have been fully transformed.
+NOTE: the style is in alpha development stage. Only some parts of the website have been fully transformed.
 
 Screenshots
 ===========
 
-![YaLinqo](Images/Screenshots/YaLinqo.png)
+![Athari/YaLinqo Screenshot](Images/Screenshots/YaLinqo.png)
 
-![CoreFX](Images/Screenshots/CoreFX.png)
+![DotNet/CoreFX Screenshot](Images/Screenshots/CoreFX.png)
 
 Features
 ========
@@ -30,12 +31,18 @@ Features
 Install
 =======
 
-You can use either **Stylus** or **Stylish** extension (only one is required). Stylus is free, open-source and with more features; Stylish is older and with questionable practices, but more popular. If your browser is neither Firefox nor Chrome, please refer to online guides, it gets more complicated.
+If you're using **Firefox** or **Chrome**, you can use **Stylus** extension to apply the style. Stylus is free, open-source and the most feature-full extension.
 
-Click on the extension title to see detailed instructions.
+**Stylish** is an older alternative which is no longer available, but it has been more popular. If you still have it installed, you can apply the user style using it, however you're strongly advised to migrate to Stylus as Stylish has been removed from browser extension stores for violating user privacy.
+
+If you're using **Edge**, you can use **TamperMonkey** to install the user style as a user script.
+
+If your browser is neither of the browsers mentioned above, please refer to online guides, it gets more complicated.
+
+**Click on the extension title to see detailed instructions.**
 
 <details>
-<summary><b>A. Stylus</b></summary>
+<summary><b>A. Firefox or Chrome: Stylus</b></summary>
 
 1. Add Stylus extension to your browser:
 
@@ -44,48 +51,79 @@ Click on the extension title to see detailed instructions.
 
 2. Add user style:
 
-   * Open [CSS file in this Gist](https://raw.githubusercontent.com/Athari/CssGitHubWindows/master/GitHubWindows.user.css).
-   * Click "Install Style" button in the opened window.
+   * Open the [.user.css file][Install with Stylus].
+   * Click the "Install Style" button in the opened window.
 </details>
 
 <details>
-<summary><b>B. Stylish</b></summary>
+<summary><b>B. Firefox or Chrome: Stylish</b></summary>
 
-1. Add Stylish extension to your browser:
+**CAUTION:** Migrating to Stylus is strongly advised.
 
-   * [Stylish for Firefox]
-   * [Stylish for Chrome]
+1. <s>Add Stylish extension to your browser:</s>
+
+   * <s>Stylish for Firefox</s> (no longer available)
+   * <s>Stylish for Chrome</s> (no longer available)
 
 2. Add user style:
 
-   * Visit [style page on UserStyles.org](https://userstyles.org/styles/162167/github-windows-edition-ath).
-   * Click "Install with Stylish" button.
+   * Visit the [style page on UserStyles.org][Install with Stylish].
+   * Click the "Install with Stylish" button.
+</details>
+
+<details>
+<summary><b>C. Edge: TamperMonkey</b></summary>
+
+1. Add TamperMonkey extension to your browser:
+
+   * [TamperMonkey for Edge]
+
+2. Add user style:
+
+   * Open the [.user.js file][Install with TamperMonkey] from the [style page on UserStyles.org][Install with Stylish].
+   * Click the "Install" button.
 </details>
 
 Known issues
 ============
 
-* Due to requirement of elements to have multiple borders, size of some controls like buttons has been changed. If GitHub uses pixel sizes for buttons, they may be cut by a few pixels.
+* Default margins of some controls like buttons has been changed. If GitHub uses pixel sizes for buttons, they may be cut off by a few pixels.
 * Due to tooltips being children of controls, they change full control size, so focus borders may be displayed incorrectly.
 
 License
 =======
 Licensed under the [MIT License](License.md).
 
+Copyright (c) 2018 Alexander Prokhorov.
+
 Links
 =====
 
-* [Source of inspiration](https://twitter.com/nikitonsky/status/1003593821723267072) — post on Twitter
-* [Resource Hacker](http://www.angusj.com/resourcehacker/) — tool for extracting icons from executable files, including Windows 95 system files
-* [PNG optimizer](https://tinypng.com/) — online tool for optimizing PNG files
-* [Base64 encoder](https://www.base64-image.de/) — online tool for embedding images in CSS as data URIs
-* [Simpler competitor](https://userstyles.org/styles/160991/github-windows-classic) — someone did that before
-* [Stylus for Firefox] — modern extension for applying user styles for Firefox
-* [Stylus for Chrome] — modern extension for applying user styles for Chrome
-* [Stylish for Firefox] — old extension for applying user styles for Firefox
-* [Stylish for Chrome] — old extension for applying user styles for Chrome
+* **Tools:**
 
+   * [Resource Hacker](http://www.angusj.com/resourcehacker/) â€” tool for extracting icons from executable files, including Windows 95 system files
+   * [PNG optimizer](https://tinypng.com/) â€” online tool for optimizing PNG files
+   * [Base64 encoder](https://www.base64-image.de/) â€” online tool for embedding images in CSS as data URIs
+
+* **Browser extensions:**
+
+   * [Stylus for Firefox] â€” extension for applying user styles for Firefox
+   * [Stylus for Chrome] â€” extension for applying user styles for Chrome
+   * [TamperMonkey for Edge] â€” extension for applying user scripts for Edge, which can be used to apply user styles too
+   * <s>Stylish for Firefox â€” old extension for applying user styles for Firefox</s>
+   * <s>Stylish for Chrome â€” old extension for applying user styles for Chrome</s>
+
+* **Related:**
+
+   * [Source of inspiration](https://twitter.com/nikitonsky/status/1003593821723267072) â€” post on Twitter
+   * [Alternative style](https://userstyles.org/styles/160991/github-windows-classic) â€” style is simpler, but has retro aesthetic to it
+   * [Another alternative style](https://github.com/3lo1i/WinHub-98) â€” closer to classic Windows theme than the previous one, but less complete
+
+   [Install with Stylus]: https://raw.githubusercontent.com/Athari/CssGitHubWindows/master/GitHubWindows.user.css
+   [Install with Stylish]: https://userstyles.org/styles/162167/github-windows-edition-ath
+   [Install with TamperMonkey]: https://userstyles.org/styles/userjs/162167/github-windows-edition-ath.user.js
    [Stylus for Firefox]: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
    [Stylus for Chrome]: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
    [Stylish for Firefox]: https://addons.mozilla.org/en-US/firefox/addon/stylish/
    [Stylish for Chrome]: https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe
+   [TamperMonkey for Edge]: https://www.microsoft.com/store/apps/9NBLGGH5162S

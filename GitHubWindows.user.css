@@ -234,6 +234,21 @@
     margin: 8px -10px 0 -10px !important;
   }
 
+  .pr-toolbar {
+    background: var(--color-button-face) !important;
+    margin: 1px -20px !important;
+  }
+  .pr-toolbar.is-stuck {
+    border-bottom: solid 1px var(--color-button-shadow) !important;
+    box-shadow: 0 1px 0 0 var(--color-button-shadow-dark) !important;
+  }
+  .pr-toolbar-shadow {
+    display: none !important;
+  }
+  .diffbar {
+    background: inherit !important;
+  }
+
   .file-wrap,
   .blob-wrapper,
   .menu,
